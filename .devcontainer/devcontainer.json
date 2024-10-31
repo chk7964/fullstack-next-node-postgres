@@ -1,0 +1,34 @@
+{
+  "name": "Dev Container",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "frontend",
+  "workspaceFolder": "/workspace",
+  "shutdownAction": "stopCompose",
+  "extensions": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "Prisma.prisma",
+    "eamodio.gitlens",
+    "GraphQL.vscode-graphql"
+  ],
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "forwardPorts": [3000, 4000, 5432],
+  "remoteEnv": {
+    "DATABASE_URL": "postgresql://postgres:postgres@db:5432/postgres?schema=public",
+    "NEXT_PUBLIC_API_URL": "http://localhost:4000"
+  },
+  "postCreateCommand": "npm install",
+  "portsAttributes": {
+    "3000": {
+      "label": "Frontend"
+    },
+    "4000": {
+      "label": "Backend"
+    },
+    "5432": {
+      "label": "Postgres"
+    }
+  }
+}
