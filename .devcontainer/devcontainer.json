@@ -1,6 +1,6 @@
 {
   "name": "Dev Container",
-  "dockerComposeFile": ["../../compose.yaml"],
+  "dockerComposeFile": ["../compose.yaml"],
   "service": "frontend",
   "workspaceFolder": "/workspace",
   "shutdownAction": "stopCompose",
